@@ -1,0 +1,27 @@
+{
+  "name": "next-relay",
+  "version": "1.0.5",
+  "description": "Relay support for NextJS",
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "yarn babel src -d lib --extensions \".ts,.tsx\""
+  },
+  "dependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.8.4",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/plugin-proposal-object-rest-spread": "^7.9.0",
+    "@babel/preset-env": "^7.9.0",
+    "@babel/preset-react": "^7.8.3",
+    "@babel/preset-typescript": "^7.8.3",
+    "isomorphic-fetch": "^2.2.1",
+    "next": "^9.3.1",
+    "react": "^16.13.1",
+    "react-relay": "^9.0.0",
+    "react-relay-network-modern-ssr": "^1.4.0",
+    "regenerator-runtime": "^0.13.5",
+    "relay-runtime": "^9.0.0"
+  },
+  "author": "Mike Tamis",
+  "license": "MIT"
+}
