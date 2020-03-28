@@ -109,7 +109,7 @@ function createPageContainer(
   const getStaticProps: GetStaticProps = async () => {
     if (optimisation !== 'SSG') {
       throw new Error(
-        'get Static Props should only be used with SSG optimisation on',
+        'getStaticProps can only be used with SSG optimisation on',
       );
     }
     const dumpedCache = await fetchQueryAndDumpCache(
