@@ -13,6 +13,10 @@ function getCacheKey(queryID, variables) {
   return JSON.stringify(stableCopy({ queryID, variables }));
 }
 
+function createPendingPromise() {
+  return new Promise(() => {})
+}
+
 async function fetchQueryAndDumpCache(query, variables, initEnviroment) {
   if (!initEnviroment) {
     throw Error('Cannot fetch and dump without a server enviroment');
@@ -41,7 +45,7 @@ function createEnvironmentFromDumpedCache(dumpedCache, initEnviroment) {
       const key = getCacheKey(queryID, variables);
       const cacheEntry = dumpedCache.find(([dataKey]) => dataKey === key);
       if (!cacheEntry) {
-        return new Promise(() => {});
+        return createPendingPromise();
       }
       return cacheEntry[1];
     }),
